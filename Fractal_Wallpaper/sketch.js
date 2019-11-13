@@ -2,7 +2,8 @@ let bosque = []; // para guardar los arboles
 
 function setup() {
     createCanvas(windowWidth, windowHeight); 
-    background(0, random(0, 255), random(0, 255));  // podría poner un background aleatorio como para el cielo 
+    background(random(60, 105),random(112, 201), random(142, 255));
+    
     hacerArboles(); 
     
     
@@ -15,6 +16,7 @@ function setup() {
     * mountains 
     * arboles verticales 
     * bosque de arboles mixtos! 
+    * hacer que los arboles generados no puedan estar muy cerca uno del otro 
     * arbustos? serían como mini arboles pero con varias bases 
     * ver esquemas de colores 
     * ver nature of code
@@ -22,14 +24,15 @@ function setup() {
 */
 function hacerArboles() 
 {
-    let numarbol = random(0,1) * 10; 
+    let numarbol = random(1,10); 
     
     for (let arbolin = 0; arbolin < numarbol; arbolin++)
     {
         let newArbol = []; 
         let pos = random(0, width); 
-        let a = createVector(pos, height); 
-        let b =createVector(pos, height/1.1); 
+        let a = createVector(pos, height);
+        let altura = random(height/1.1, height/1.0025); 
+        let b =createVector(pos, altura); 
         newArbol[0] = new Branch(a, b, 5); 
         newArbol[1] = newArbol[0].createBranchDer(); 
         newArbol[2] = newArbol[0].createBranchIzq(); 
