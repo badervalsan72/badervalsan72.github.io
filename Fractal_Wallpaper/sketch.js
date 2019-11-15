@@ -2,10 +2,11 @@ let bosque = []; // para guardar los arboles
 
 function setup() {
     createCanvas(windowWidth, windowHeight); 
-    background(random(60, 105),random(112, 201), random(142, 255));
-    
-    hacerArboles(); 
-    
+    background(random(60, 105),random(112, 201), random(142, 255)); // --> cielo
+    hacerArboles();
+    makeBranches(7);  
+    sun = new Sun(); 
+    sun.show(); 
     
 
 }
@@ -43,22 +44,25 @@ function hacerArboles()
 
 
 }
-function mousePressed()
+function makeBranches(len)
 {
-    for (let i = 0; i < bosque.length; i++)
+    this.len = len;
+    for (let a = 0; a < this.len; a++)
     {
-        for (let j = bosque[i].length -1; j > 0; j--)
+        for (let i = 0; i < bosque.length; i++)
         {
-            if (!bosque[i][j].acabado)
+            for (let j = bosque[i].length -1; j > 0; j--)
             {
+                if (!bosque[i][j].acabado)
+                {
 
-                bosque[i].push(bosque[i][j].createBranchDer());
-                bosque[i].push(bosque[i][j].createBranchIzq());
+                    bosque[i].push(bosque[i][j].createBranchDer());
+                    bosque[i].push(bosque[i][j].createBranchIzq());
+                }
+                bosque[i][j].acabado = true; 
             }
-            bosque[i][j].acabado = true; 
         }
     }
-    
 
 }
 function draw() {

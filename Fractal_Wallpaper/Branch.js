@@ -2,20 +2,30 @@ function Branch(inicio, fin, strength)
 {
     this.inicio = inicio; 
     this.fin = fin; 
-    this.strength = strength; 
+    this.strength = strength;
+
+    this.red = random(255);
+    this.green = random(255);
+    this.blue = random(255); 
     
-    if (this.strength < 3)
-    {
-        stroke(random(255),random(255), random(255));
-    }
-    else
-    {
-        stroke(74, 44, 0); 
-    }
+    //stroke(random(255),random(255), random(255));
+    //strokeWeight(this.strength);
     
-    strokeWeight(this.strength); 
     this.show = function() 
     {
+        strokeWeight(this.strength);
+        
+        if (this.strength > 0.15)
+        {
+            stroke(64, 38, 21);
+        } 
+        else 
+        {
+            stroke(this.red, this.green, this.blue);
+        }
+         
+        //stroke(this.red, this.green, this.blue);
+
         line(this.inicio.x, this.inicio.y, this.fin.x, this.fin.y); 
     }
     this.createBranchIzq = function()
