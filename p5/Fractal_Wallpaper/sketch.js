@@ -13,8 +13,8 @@ function setup() {
 
 /*
     TODO: 
-    * sun 
-    * mountains 
+    * sun [hecho]
+    * mountains [en proceso]
     * arboles verticales 
     * bosque de arboles mixtos! 
     * hacer que los arboles generados no puedan estar muy cerca uno del otro 
