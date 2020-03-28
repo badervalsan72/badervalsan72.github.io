@@ -1,6 +1,6 @@
 function setup() {
-    createCanvas(400, 400);
-    background(255);
+    createCanvas(width, height);
+    background(random(0, 125));
     x = new Square(); 
     
     

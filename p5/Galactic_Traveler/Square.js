@@ -1,7 +1,7 @@
 function Square() 
 {
-  xvalue = 100;
-  yvalue = 100;
+  let xvalue = 100;
+  let yvalue = 100;
   fill(random(255), random(255), random(255));
   frameRate(30);
   
@@ -22,15 +22,16 @@ function Square()
   this.expand = function() 
   {
     
-    if (xvalue <= width)
+    if (this.xvalue <= width)
     {
-      xvalue += 10;
-      yvalue += 10;
+      this.xvalue += 10;
+      this.yvalue += 10;
     }
     
     
-    if (xvalue > width) 
+    if (this.xvalue > width) 
     {
+      this.xvalue = 0; 
       newsquare = new Square(); 
       newsquare.show(); 
       newsquare.expand(); 

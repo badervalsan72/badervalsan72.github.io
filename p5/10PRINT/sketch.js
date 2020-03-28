@@ -2,8 +2,10 @@ let xvalue = 0;
 let yvalue = 0;  
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    background(random(255), random(255), random(255)); 
-    stroke(random(255), random(255), random(255)); 
+    background(random(0, 100), random(0, 100), random(0, 100)); 
+    stroke(random(100, 255), random(100, 255), random(100, 255)); 
+    strokeWeight(3);
+    
 }
 
 

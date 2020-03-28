@@ -1,8 +1,18 @@
 let bosque = []; // para guardar los arboles
-
 function setup() {
     createCanvas(windowWidth, windowHeight); 
     background(random(60, 105),random(112, 201), random(142, 255)); // --> cielo
+    let starsQt = random(800); // cantidad de estrellas en la imagen 
+    
+    for (let i = 0; i < starsQt; i++)
+    {
+        let r = random(0,2)
+        fill(255); 
+        noStroke(); 
+        ellipse(random(width), random(height - 20), r);         
+
+    }
+    
     hacerArboles();
     makeBranches(7);  
     sun = new Sun(); 
@@ -14,7 +24,7 @@ function setup() {
 /*
     TODO: 
     * sun [hecho]
-    * mountains [en proceso]
+    * mountains [en proceso --> revisar bien vertexes y perlin noise]
     * arboles verticales 
     * bosque de arboles mixtos! 
     * hacer que los arboles generados no puedan estar muy cerca uno del otro 
